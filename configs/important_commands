@@ -1,0 +1,9 @@
+# Install everything from a requirements.txt
+pip3 install -r requirements.txt
+
+# Put all currently installed requirements into requirements.txt
+pip3 freeze > requirements.txt
+
+# Run quotes_spider.py spider and append the output to quote.jl
+scrapy runspider quotes_spider.py -o quote.jl
+
