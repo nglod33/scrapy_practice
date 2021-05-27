@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1
 
-FROM postgres
+FROM postgres:latest
 
-ENV POSTGRES_PASSWORD docker
-ENV POSTGRES_DV world
+ENV POSTGRES_PASSWORD=password
+ENV POSTGRES_USER=docker
+ENV POSTGRES_DB=database
+COPY scraping_data.sql /docker-entrypoint-initdb.d/scraping_data.sql
